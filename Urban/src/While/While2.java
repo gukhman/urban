@@ -8,6 +8,8 @@ public class While2 {
 			sum += i;
 		}
 		System.out.println("Сумма всех чисел от 1 до 100 равна " + sum);
+
+
 	}
 
 }
