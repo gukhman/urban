@@ -24,14 +24,15 @@ public class Car {
         private String numberOfCylinders;
         private int weight;
 
-        private void Running() {
+        public void Running() {
 
             class EngineStrokes {       //Почему этому классу нельзя задать модификатор доступа?
+                                        //Почему не могу объекты этого класса?
                                         //Работа двигателя описывается 4-мя тактами, ходом поршня вверх/вниз
                                         //а также открытием и закрытием впускного и выпускного клапана
 
 
-                private void Intake() {      //Впуск
+                public void Intake() {      //Впуск
                     System.out.println("Такт впуска:");
                     EngineStrokes intakeStroke = new EngineStrokes();
                     IntakeValve.open();
@@ -39,7 +40,7 @@ public class Car {
                     intakeStroke.PistonMoveDown();
                 }
 
-                private void Compression() {   //Сжатие
+                public void Compression() {   //Сжатие
                     System.out.println("Такт сжатия:");
                     EngineStrokes compressionStroke = new EngineStrokes();
                     IntakeValve.close();
@@ -47,7 +48,7 @@ public class Car {
                     compressionStroke.PistonMoveDown();
                 }
 
-                private void Combustion() {   //Рабочий ход
+                public void Combustion() {   //Рабочий ход
                     System.out.println("Такт рабочего хода:");
                     EngineStrokes combustionStroke = new EngineStrokes();
                     IntakeValve.close();
@@ -55,7 +56,7 @@ public class Car {
                     combustionStroke.PistonMoveDown();
                 }
 
-                private void Exhausting() {   //Выпуск
+                public void Exhausting() {   //Выпуск
                     System.out.println("Такт выпуска:");
                 }
 
