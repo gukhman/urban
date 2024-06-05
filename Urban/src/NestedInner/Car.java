@@ -15,7 +15,7 @@ public class Car {
     private int weight;
     private int length;
 
-    public void move() {
+    public void move() {                //Для движения автомобиля запускаем двигатель
         Engine engine = new Engine();
         engine.Running();
     }
@@ -26,7 +26,10 @@ public class Car {
 
         private void Running() {
 
-            class EngineStrokes {
+            class EngineStrokes {       //Почему этому классу нельзя задать модификатор доступа?
+                                        //Работа двигателя описывается 4-мя тактами, ходом поршня вверх/вниз
+                                        //а также открытием и закрытием впускного и выпускного клапана
+
 
                 private void Intake() {      //Впуск
                     System.out.println("Такт впуска:");
