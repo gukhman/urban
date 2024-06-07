@@ -1,17 +1,39 @@
 package Exception;
 
-import java.util.Scanner;
-
 public class Exception1 {
-    public void main() throws Exception {
-        int a = input();
-        if (a % 2 == 1) throw new Exception("Передано нечетное число!");
-        System.out.println(a + " - это четное число");
+
+    public void main() {
+        for (int i = -10; i <= 10; i++) {
+            System.out.println(input(i));
+        }
     }
 
-    public int input() throws Exception {
-        System.out.print("Введите четное число: ");
-        Scanner in = new Scanner(System.in);
-        return in.nextInt();
+    //Метод принимает на вход целое число и возвращает 0 или 1
+    // в зависимоти от того четное или нет число
+    public String input(int num) {
+        int res;
+        try {
+            // выражение вызовет ArithmeticException (деление на 0),
+            // если число num нечетное
+            res = num / (Math.abs(num) % 2 - 1);
+        } catch (ArithmeticException e) {
+            res = 0;
+        }
+
+        //форматируем вывод
+        return (output(num, res));
+    }
+
+    private String output(int num, int numResult) {
+        String strResult;
+
+        if (numResult == 0) {
+            strResult = num + " - Передано нечетное число!";
+        } else {
+            {
+                strResult = num + " - это четное число";
+            }
+        }
+        return strResult;
     }
 }
