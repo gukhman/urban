@@ -19,9 +19,9 @@ public class FileWork {
 
     public String input(boolean firstFlag) {
         if (firstFlag) {
-            System.out.print("Вводите данные для записи: ");
+            System.out.print("Вводите данные для записи: //для окончания записи введите '0' (ноль)");
         } else {
-            System.out.print("Введите что-нибудь еще: ");
+            System.out.print("Введите что-нибудь еще: //для окончания записи введите '0' (ноль)");
         }
         Scanner in = new Scanner(System.in);
         return in.nextLine();
