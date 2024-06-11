@@ -22,7 +22,7 @@ public class Collections1 {
         //return list.contains(whatToSearch); //есть встроенный метод, но мы напишем свой
         boolean result = false;
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == whatToSearch) {
+            if (list.get(i).equals(whatToSearch)) {
                 result = true;
                 break; //если нашли элемент, то нет смысла пробегать весь оставшийся ArrayList
             }
