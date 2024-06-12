@@ -4,8 +4,9 @@ package Lambda.Task2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
         //Заполняем список элементами
         String ALCauchy = "Число А называется пределом функции f(x), при условии, что х→+∞, " +
@@ -21,4 +22,25 @@ public class Main {
         System.out.println("Самое длинное слово из массива:\n   "
                 + res[0] + "\nУказанное слово содержит " + res[1] + " символов.");
     }
+}*/
+
+public class Main {
+    public static void main(String[] args) {
+        List list1 = Arrays.asList("Привет", "как","Трансформатор", "дела");
+        Operation operation = list -> {
+            String result = list.get(0);
+            int max = list.get(0).length();
+            for (int i = 0; i < list.size(); i++) {
+                if (max < list.get(i).length()) {
+                    result = list.get(i);
+                }
+            }
+            return result;
+        };
+        System.out.println(operation.calculate(list1));
+    }
+}
+
+interface Operation {
+    String calculate(List<String> list);
 }
